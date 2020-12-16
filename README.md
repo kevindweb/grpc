@@ -9,6 +9,19 @@ RPC is a protocol that executes processes synchronously on a specific server. Th
 Our implementation would focus on the Go and Python implementations for testing cross-language functionality and cover a multitude of challenges such as pluggable support for load balancing, tracing, health checking and authentication. 
 
 ---
+# Running the protocol
+The program requires at least 3 terminal sessions open:
+1. Load Balancer
+2. Server
+3. Client
+
+In that order will instatiate a RPC connection. A `tmux` session is the easist way to spin up new terminals. To run the go version of everything, `cd` into the directories (load_balancer for example) and run `go build && ./grpc`. The golang client needs to be built from the `grpc` folder with the `main.go` code. 
+
+The python implementation for example can be run with `python server.py` and `python client.py`. 
+
+## Memory-intensive functions
+To see the true benefit of gRPC, run with `go build && ./grpc perfTest`. This will run an extremely IO-bound function to test the functionality of the golang server.
+
 # Challenges 
 #### Health Checks & Fault Tolerance
 When a client sends a request through our system, it expects to get a timely response from any arbitrary server. Like many systems, the gRPC library handles client deadlines with timeouts. If for any reason a server cannot handle the request in a specific amount of time, we will do one of two things (depending on the system parameters specified by the client).
