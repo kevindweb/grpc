@@ -48,7 +48,7 @@ There are two potential implementations of load balancing in gRPC.
 ## Papers to guide work
 1. [Google Cloud's gRPC presentation](https://platformlab.stanford.edu/Seminar%20Talks/gRPC.pdf)
 2. [Load Balancing background](https://grpc.io/blog/grpc-load-balancing/#client-side-lb-options)
-3. [Error Handeling](https://www.usenix.org/conference/srecon19asia/presentation/sheerin)
+3. [Error Handling](https://www.usenix.org/conference/srecon19asia/presentation/sheerin)
 4. [gRPC website background](https://grpc.io/blog/grpc-load-balancing/)
 5. [IoT performance benefit](https://hal.archives-ouvertes.fr/hal-02495252/document)
 
